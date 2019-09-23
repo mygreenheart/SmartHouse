@@ -1,0 +1,17 @@
+/*класс Сolumn
+    state
+        _name : String
+        _mode : String
+        _volume: Number
+        playlist: Objects  
+    methods
+        getName() : String
+        chooseMode(): String
+        getMode(): String
+        volumeUp(): Number
+        volumeDown(): Number
+        showPlaylist() void
+        playSong(): Object
+
+   
+        
