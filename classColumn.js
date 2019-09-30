@@ -1,18 +1,11 @@
 "use strict"
+this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
 
-function Column(name, mode, volume,currentSong) {
+function Column(name, mode, volume, currentSong) {
     this._name = name;
     this._mode = mode;
     this._volume = volume;
     this._currentSong = currentSong;
-    this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
-   /*this._playlist = function() {
-       var playlist = {
-           "Iggy Pop": "The Passenger",
-           "Queen": ["Radio GaGa", "Bohemian Rhapsody", "Another One Bites The Dust"],
-           "Ляпис Трубецкой": ["Танцуй", "Евпатория"]
-       };
-   }*/
 }
 Column.prototype.getName = function(){
     return this._name;
@@ -39,20 +32,17 @@ Column.prototype.getMode = function(){
 }
 
 Column.prototype.volumeUp = function(){
-    return this._volume =  this._volume+2;
+     this._volume =  this._volume+2;
 }
 
 Column.prototype.volumeDown = function(){
-    return this._volume =  this._volume-2;
+     this._volume =  this._volume-2;
 }
 
 Column.prototype.showPlaylist = function(){
     return console.dir(this.playlist);
 }
 
-/*Column.prototype.addToPlaylist = function(nameSinger, nameSong){
-  Object.assign(this.playlist, {nameSinger: nameSong});
-}*/
 
 Column.prototype.playSong = function(currentSong){
     

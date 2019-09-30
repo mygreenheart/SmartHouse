@@ -1,0 +1,28 @@
+ playlist: array  
+
+/*класс Сolumn
+    state
+        _name : String
+        _mode : String
+        _volume: Number
+        _currentSong; String;
+       
+    methods
+        getName() : String
+        chooseMode(mode): String
+        getMode(): String
+        volumeUp(): Number
+        volumeDown(): Number
+        showPlaylist() void
+        playSong(_currentSong): String
+
+
+   /*класс Conditioning
+        state
+            _name: String
+            _mode: bool
+            _capacity: Number
+        methdods
+            getName(): String
+            changeMode(): void
+            setCapacity(): Number 
