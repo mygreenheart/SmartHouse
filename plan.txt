@@ -9,11 +9,11 @@
        
     methods
         getName() : String
-        chooseMode(mode): String
+        chooseMode(_mode): void
         getMode(): String
-        volumeUp(): Number
-        volumeDown(): Number
-        showPlaylist() void
+        volumeUp(): void
+        volumeDown(): void
+        showPlaylist() array
         playSong(_currentSong): String
 
 

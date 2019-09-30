@@ -11,19 +11,21 @@ Column.prototype.getName = function(){
     return this._name;
 };
 
+
+
 Column.prototype.chooseMode = function(mode){
    switch(mode){
        case "aux":
-           return this._mode = "aux";
+            this._mode = "aux";
            break;
         case "bluetooth":
-           return this._mode = "bluetooth";
+            this._mode = "bluetooth";
            break;
         case "radio":
-            return this._mode = "radio";
+             this._mode = "radio";
             break;
         default: 
-            console.log("Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]")
+        throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
    }
 };
 
@@ -51,5 +53,7 @@ Column.prototype.playSong = function(currentSong){
     return console.log("Сейчас играет",currentSong);
  
 }
+
+
 
 var jbl = new Column("JBL","aux",6);
