@@ -13,6 +13,7 @@
         getMode(): String
         volumeUp(): void
         volumeDown(): void
+	volumeShow(): Number
         showPlaylist() array
         playSong(_currentSong): String
 

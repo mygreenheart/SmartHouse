@@ -1,11 +1,12 @@
 "use strict"
-this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
+
 
 function Column(name, mode, volume, currentSong) {
     this._name = name;
     this._mode = mode;
     this._volume = volume;
     this._currentSong = currentSong;
+    this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
 }
 Column.prototype.getName = function(){
     return this._name;
@@ -34,15 +35,27 @@ Column.prototype.getMode = function(){
 }
 
 Column.prototype.volumeUp = function(){
-     this._volume =  this._volume+2;
+    if(this._volume >= 0 && this._volume <= 100){
+        this._volume =  this._volume+2;
+    }
+    else throw "Громкость выходит за пределы доступного";
+
 }
 
 Column.prototype.volumeDown = function(){
-     this._volume =  this._volume-2;
+    if(this._volume >= 0 && this._volume <= 100){
+        this._volume =  this._volume-2;
+    }
+    else throw "Громкость выходит за пределы доступного";
+
 }
 
+Column.prototype.volumeShow = function(){
+    return this._volume;
+}    
+
 Column.prototype.showPlaylist = function(){
-    return console.dir(this.playlist);
+    return this.playlist;
 }
 
 
