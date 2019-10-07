@@ -21,9 +21,13 @@
    /*класс Conditioning
         state
             _name: String
-            _mode: bool
-            _capacity: Number
+            _mode: array [cool,heat,dry,auto,sleep]
+            _capacity: Number 1-10
         methdods
+            on() void
+            off() void
+            setTimeoutOff() void
             getName(): String
             changeMode(): void
+            getMode(): bool
             setCapacity(): Number 
