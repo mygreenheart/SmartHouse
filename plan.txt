@@ -1,4 +1,3 @@
- playlist: array  
 
 /*класс Сolumn
     state
@@ -6,6 +5,7 @@
         _mode : String
         _volume: Number
         _currentSong; String;
+	playlist: array
        
     methods
         getName() : String
@@ -13,7 +13,7 @@
         getMode(): String
         volumeUp(): void
         volumeDown(): void
-	volumeShow(): Number
+    	volumeShow(): Number
         showPlaylist() array
         playSong(_currentSong): String
 

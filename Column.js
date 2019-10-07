@@ -1,11 +1,11 @@
 "use strict"
 
 
-function Column(name, mode, volume, currentSong) {
+function Column(name, mode) {
     this._name = name;
     this._mode = mode;
-    this._volume = volume;
-    this._currentSong = currentSong;
+    this._volume = 50;
+    this._currentSong = playlist[0];
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
 }
 Column.prototype.getName = function(){
