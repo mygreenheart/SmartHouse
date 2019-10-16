@@ -4,9 +4,10 @@
 function Column(name, mode) {
     this._name = name;
     this._mode = mode;
-    this._volume = 50;
-    this._currentSong = playlist[0];
+    this._volume = 2;
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
+    this._currentSong = this.playlist[0];
+  
 }
 Column.prototype.getName = function(){
     return this._name;
@@ -35,7 +36,7 @@ Column.prototype.getMode = function(){
 }
 
 Column.prototype.volumeUp = function(){
-    if(this._volume >= 0 && this._volume <= 100){
+    if(this._volume < 100){
         this._volume =  this._volume+2;
     }
     else throw "Громкость выходит за пределы доступного";
@@ -43,24 +44,23 @@ Column.prototype.volumeUp = function(){
 }
 
 Column.prototype.volumeDown = function(){
-    if(this._volume >= 0 && this._volume <= 100){
+    if(this._volume > 0 ){
         this._volume =  this._volume-2;
     }
     else throw "Громкость выходит за пределы доступного";
 
 }
 
-Column.prototype.volumeShow = function(){
+Column.prototype.getVolume = function(){
     return this._volume;
 }    
 
-Column.prototype.showPlaylist = function(){
+Column.prototype.getPlaylist = function(){
     return this.playlist;
 }
 
 
-Column.prototype.playSong = function(currentSong){
-    
+Column.prototype.playSong = function(){
     currentSong = this.playlist[Math.floor(Math.random()*this.playlist.length)];//Возвращает рандомный элемент массива playlist
     this._currentSong = currentSong;
     return console.log("Сейчас играет",currentSong);
