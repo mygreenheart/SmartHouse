@@ -9,13 +9,15 @@
        
     methods
         getName() : String
+	getMode(): String
+	getVolune(): Number
+        getPlaylist(): array
+	getSong(): String
         chooseMode(_mode): void
-        getMode(): String
         volumeUp(): void
         volumeDown(): void
-    	volumeShow(): Number
-        showPlaylist() array
-        playSong(_currentSong): String
+    	chooseSong(songName): void
+        playSong(): String
 
 
    /*класс Conditioning

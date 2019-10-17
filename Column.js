@@ -16,19 +16,13 @@ Column.prototype.getName = function(){
 
 
 Column.prototype.chooseMode = function(mode){
-   switch(mode){
-       case "aux":
-            this._mode = "aux";
-           break;
-        case "bluetooth":
-            this._mode = "bluetooth";
-           break;
-        case "radio":
-             this._mode = "radio";
-            break;
-        default: 
-        throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
-   }
+    if(mode = "aux"){
+        this._mode = "aux"
+       } else if(mode = "bluetooth"){
+        this._mode = "bluethooth";
+       }else if(mode = "radio"){
+        this._mode = "radio";
+       }else throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
 };
 
 Column.prototype.getMode = function(){
@@ -59,6 +53,17 @@ Column.prototype.getPlaylist = function(){
     return this.playlist;
 }
 
+Column.prototype.getSong = function(){
+    return this._currentSong;
+}
+
+
+Column.prototype.chooseSong = function(songName){
+    if(this.playlist.indexOf(songName) > 0){
+        this._currentSong = songName;
+    }
+     else throw "Exeption"
+}
 
 Column.prototype.playSong = function(){
     currentSong = this.playlist[Math.floor(Math.random()*this.playlist.length)];//Возвращает рандомный элемент массива playlist
