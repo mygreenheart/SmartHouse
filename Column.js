@@ -15,13 +15,9 @@ Column.prototype.getName = function () {
 
 
 Column.prototype.chooseMode = function (mode) {
-    if (mode = "aux") {
-        this._mode = "aux"
-    } else if (mode = "bluetooth") {
-        this._mode = "bluethooth";
-    } else if (mode = "radio") {
-        this._mode = "radio";
-    } else throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
+    if(mode == "aux" || mode == "bluetooth" || mode == "radio") {
+        this._mode = mode;
+    } else  throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
 };
 
 Column.prototype.getMode = function () {
