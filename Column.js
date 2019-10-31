@@ -1,13 +1,18 @@
 "use strict"
 
-export default function Column(name, mode) {
-    this._name = name;
+
+ function Column(name, mode) {
+    Devices.call(this,name);
     this._mode = mode;
     this._volume = 50;
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
     this._currentSong = this.playlist[0];
 
 }
+
+Column.prototype = Object.create(Devices.prototype);
+Column.prototype.constructor = Devices;
+
 Column.prototype.getName = function () {
     return this._name;
 };
@@ -70,7 +75,7 @@ Column.prototype.playRandomSong = function () {
 
 }
 
-
+export default Column;
 
 
 var jbl = new Column("JBL", "aux", 6);
