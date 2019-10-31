@@ -1,15 +1,15 @@
 
 /*класс Сolumn
     state
-        _name : String
+        
         _mode : String
         _volume: Number
-        _currentSong; String;
+        _currentSong: String;
 	playlist: array
        
     methods
-        getName() : String
-	getMode(): String
+	getName(): String
+        getMode(): String
 	getVolune(): Number
         getPlaylist(): array
 	getSong(): String
@@ -22,7 +22,7 @@
 
    /*класс Conditioning
         state
-            _name: String
+            
             _mode: array [cool,heat,dry,auto,sleep]
 	    _currentMode: String
             _capacity: Number 1-10
@@ -35,3 +35,11 @@
             setTimeoutOff(time) void
             
             
+	/* Класс Devices
+	state 
+		_name: String
+		_typeDevice: Column && Conditioning
+
+	nethods
+		getName() : String
+				

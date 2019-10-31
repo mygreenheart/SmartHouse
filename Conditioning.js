@@ -1,6 +1,6 @@
 "use strict"
 
-function Conditioning(name) {
+export default function Conditioning(name) {
     this._name = name;
     this._mode = ["sleep", "cool", "heat", "dry"];
     this._currentMode = this._mode[0];

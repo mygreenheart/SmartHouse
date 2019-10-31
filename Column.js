@@ -1,6 +1,6 @@
 "use strict"
 
-function Column(name, mode) {
+export default function Column(name, mode) {
     this._name = name;
     this._mode = mode;
     this._volume = 50;
@@ -12,17 +12,15 @@ Column.prototype.getName = function () {
     return this._name;
 };
 
-
+Column.prototype.getMode = function () {
+    return this._mode;
+}
 
 Column.prototype.chooseMode = function (mode) {
     if(mode == "aux" || mode == "bluetooth" || mode == "radio") {
         this._mode = mode;
     } else  throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
 };
-
-Column.prototype.getMode = function () {
-    return this._mode;
-}
 
 Column.prototype.volumeUp = function () {
     if (this._volume < 100) {
