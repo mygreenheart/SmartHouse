@@ -3,7 +3,7 @@
 function Column(name, mode) {
     this._name = name;
     this._mode = mode;
-    this._volume = 2;
+    this._volume = 50;
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
     this._currentSong = this.playlist[0];
 
