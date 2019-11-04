@@ -39,19 +39,20 @@ Conditioning.prototype.changeMode = function (mode) {
             break;
         default:
             throw "Неверный выбор. Попробуйте [cool, heat, dry]"
-
-Conditioning.prototype.setCapacity = function (capacity) {
-    if (capacity <= 10 && capacity >= 0) {
-        this._capacity = capacity;
     }
-    else throw "Ввели недопустимое значение"
-}
+    
+    Conditioning.prototype.setCapacity = function (capacity) {
+        if (capacity <= 10 && capacity >= 0) {
+            this._capacity = capacity;
+        }
+        else throw "Ввели недопустимое значение"
+    }
 
-Conditioning.prototype.setTimeoutOff = function (time) {
-    setTimeout(
-        this._currentMode = this._mode[0],
-        time
-    )
-}
+    Conditioning.prototype.setTimeoutOff = function (time) {
+        setTimeout(
+            this._currentMode = this._mode[0],
+            time
+        )
+    }
 
-var samsa = new Conditioning("samsung")
+    var samsa = new Conditioning("samsung")
