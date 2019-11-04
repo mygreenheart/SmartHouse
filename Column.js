@@ -1,9 +1,10 @@
 "use strict"
 
 
- function Column(name, mode) {
-    Devices.call(this,name);
-    this._mode = mode;
+function Column(name) {
+    Devices.call(this, name);
+    this._mode = ["sleep", "aux", "bluetooth", "radio"];
+    this._currentMode = this._mode[0];
     this._volume = 50;
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
     this._currentSong = this.playlist[0];
@@ -22,9 +23,20 @@ Column.prototype.getMode = function () {
 }
 
 Column.prototype.chooseMode = function (mode) {
-    if(mode == "aux" || mode == "bluetooth" || mode == "radio") {
-        this._mode = mode;
-    } else  throw "Ввели неправильное значени, попробуйте выбрать из [AUX, BLUETOOTH, RADIO]"
+    switch (mode) {
+        case "aux":
+            this._currentMode = this._mode[1];
+            break;
+        case "bluetooth":
+            this._currentMode = this._mode[2];
+            break;
+        case "radio":
+            this._currentMode = this._mode[3];
+            break;
+        default:
+            throw "Неверный выбор. Попробуйте [aux,bluetooth,radio]"
+    }
+
 };
 
 Column.prototype.volumeUp = function () {
@@ -55,7 +67,6 @@ Column.prototype.getSong = function () {
     return this._currentSong;
 }
 
-
 Column.prototype.chooseSong = function (songName) {
     if (this.playlist.indexOf(songName) > 0) {
         this._currentSong = songName;
@@ -75,7 +86,6 @@ Column.prototype.playRandomSong = function () {
 
 }
 
-export default Column;
 
 
 var jbl = new Column("JBL", "aux", 6);

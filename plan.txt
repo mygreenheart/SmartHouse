@@ -1,8 +1,9 @@
 
 /*класс Сolumn
     state
-        
-        _mode : String
+        _name: String
+        _mode : array[sleep,aux,bluetooth,radio]
+        _currentMode: _mode[index]
         _volume: Number
         _currentSong: String;
 	playlist: array
@@ -10,29 +11,33 @@
     methods
 	getName(): String
         getMode(): String
-	getVolune(): Number
+	    getVolune(): Number
         getPlaylist(): array
-	getSong(): String
+	    getSong(): String
+
         chooseMode(_mode): void
         volumeUp(): void
         volumeDown(): void
     	chooseSong(songName): void
         playSong(): String
+        playRandomSong(): void
 
 
    /*класс Conditioning
         state
-            
+            _name: String
             _mode: array [cool,heat,dry,auto,sleep]
-	    _currentMode: String
+	         _currentMode: _mode[index]
             _capacity: Number 1-10
-        methdods
+            
+        methdods:
 	    getName(): String
 	    getMode(): String
-            onOff() void
+        
+        onOff() void
 	    changeMode(mode): void
-            setCapacity(): Void
-            setTimeoutOff(time) void
+         setCapacity(): Void
+        setTimeoutOff(time) void
             
             
 	/* Класс Devices

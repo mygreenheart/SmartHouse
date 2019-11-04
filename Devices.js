@@ -1,14 +1,12 @@
 "use strict"
-import Column from "./Column.js"
-import Conditioning from "./Conditioning.js"
 
 function Devices(name,type){
     this._name = name;
     if(type == "column"){
-        this._typeDevice = Column;
+        this._typeDevice = type;
     }
    else if(type == "conditiong"){
-         this._typeDevice = Conditioning;
+         this._typeDevice = type;
    }
    else throw "Ввели неправильное значение устройства"
 
@@ -16,6 +14,10 @@ function Devices(name,type){
 
 Devices.prototype.getName = function (){
     return this._name;
+}
+
+Devices.prototype.getMode = function(){
+    return this._currentMode;
 }
 
 var d = new Devices("jbl","column");
