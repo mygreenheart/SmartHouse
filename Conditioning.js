@@ -40,7 +40,7 @@ Conditioning.prototype.changeMode = function (mode) {
         default:
             throw "Неверный выбор. Попробуйте [cool, heat, dry]"
     }
-    
+
     Conditioning.prototype.setCapacity = function (capacity) {
         if (capacity <= 10 && capacity >= 0) {
             this._capacity = capacity;
@@ -54,5 +54,5 @@ Conditioning.prototype.changeMode = function (mode) {
             time
         )
     }
-
-    var samsa = new Conditioning("samsung")
+}
+    var samsa = new Conditioning("samsung");
