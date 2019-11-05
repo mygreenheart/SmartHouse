@@ -3,7 +3,7 @@
 
 function Column(name) {
     Devices.call(this, name);
-    this._mode = ["sleep", "aux", "bluetooth", "radio"];
+    this._mode = ["aux", "bluetooth", "radio"];
     this._currentMode = this._mode[0];
     this._volume = 50;
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
@@ -14,12 +14,8 @@ function Column(name) {
 Column.prototype = Object.create(Devices.prototype);
 Column.prototype.constructor = Devices;
 
-Column.prototype.getName = function () {
-    return this._name;
-};
-
 Column.prototype.getMode = function () {
-    return this._mode;
+    return this._currentMode;
 }
 
 Column.prototype.chooseMode = function (mode) {
@@ -38,6 +34,7 @@ Column.prototype.chooseMode = function (mode) {
     }
 
 };
+
 
 Column.prototype.volumeUp = function () {
     if (this._volume < 100) {
@@ -64,14 +61,14 @@ Column.prototype.getPlaylist = function () {
 }
 
 Column.prototype.getSong = function () {
-    return this._currentSong;
+    return this.playSong[this._currentSong];
 }
 
 Column.prototype.chooseSong = function (songName) {
     if (this.playlist.indexOf(songName) > 0) {
         this._currentSong = songName;
-    }
-    else throw "Exeption"
+    }else throw "Exeption"
+    
 }
 
 Column.prototype.playSong = function () {
@@ -80,12 +77,11 @@ Column.prototype.playSong = function () {
 }
 
 Column.prototype.playRandomSong = function () {
-    currentSong = this.playlist[Math.floor(Math.random() * this.playlist.length)];//Возвращает рандомный элемент массива playlist
-    this._currentSong = currentSong;
-    return console.log("Сейчас играет", currentSong);
+    this._currentSong = this.playlist[Math.floor(Math.random() * this.playlist.length)];//Возвращает рандомный элемент массива playlist
+    return console.log("Сейчас играет", this._currentSong);
 
 }
 
 
 
-var jbl = new Column("JBL", "aux", 6);
+var jbl = new D("JBL", "aux", 6);

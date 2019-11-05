@@ -1,9 +1,8 @@
 "use strict"
 
 function Conditioning(name) {
-    this._name = name;
     Devices.call(this, name);
-    this._mode = ["sleep", "cool", "heat", "dry"];
+    this._mode = ["cool", "heat", "dry"];
     this._currentMode = this._mode[0];
     this._capacity = 10;
 }
@@ -11,19 +10,8 @@ function Conditioning(name) {
 Conditioning.prototype = Object.create(Devices.prototype);
 Conditioning.prototype.constructor = Devices;
 
-Conditioning.prototype.getName = function () {
-    return this._name;
-};
-
 Conditioning.prototype.getMode = function () {
     return this._currentMode;
-}
-
-Conditioning.prototype.onOff = function () {
-    if (this._currentMode == "sleep") {
-        this._currentMode = this._mode[1];
-    }
-    else this._currentMode = this._mode[0];
 }
 
 Conditioning.prototype.changeMode = function (mode) {
@@ -48,11 +36,5 @@ Conditioning.prototype.changeMode = function (mode) {
         else throw "Ввели недопустимое значение"
     }
 
-    Conditioning.prototype.setTimeoutOff = function (time) {
-        setTimeout(
-            this._currentMode = this._mode[0],
-            time
-        )
-    }
 }
-    var samsa = new Conditioning("samsung");
+var samsa = new Conditioning("samsung");

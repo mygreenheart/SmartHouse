@@ -1,23 +1,23 @@
 "use strict"
 
-function Devices(name,type){
+function Devices(name, type) {
     this._name = name;
-    if(type == "column"){
-        this._typeDevice = type;
-    }
-   else if(type == "conditiong"){
-         this._typeDevice = type;
-   }
-   else throw "Ввели неправильное значение устройства"
-
+    this._typeDevice = type;
+    this._isOn = false;
 }
 
-Devices.prototype.getName = function (){
+Devices.prototype.getName = function () {
     return this._name;
 }
 
-Devices.prototype.getMode = function(){
-    return this._currentMode;
+Devices.prototype.onOff = function () {
+  this._isOn ? this._isOn = false : this._isOn = true;
 }
 
-var d = new Devices("jbl","column");
+Devices.prototype.setTimeoutOff = function (time) {
+    setTimeout(
+        this._isOn = false,
+        time
+    )
+}
+var d = new Devices("jbl", "column");
