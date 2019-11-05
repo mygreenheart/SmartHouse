@@ -67,8 +67,7 @@ Column.prototype.getSong = function () {
 Column.prototype.chooseSong = function (songName) {
     if (this.playlist.indexOf(songName) > 0) {
         this._currentSong = songName;
-    }else throw "Exeption"
-    
+    } else throw "Exeption"
 }
 
 Column.prototype.playSong = function () {

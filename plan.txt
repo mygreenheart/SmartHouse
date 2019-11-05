@@ -48,3 +48,15 @@
 	nethods
 		getName() : String
 				
+/*класс Device
+        state
+            _name: String
+            _typeDevice: String
+            _isOn : bool
+            
+        methdods:
+	    getName(): String    
+       	    onOff() void
+	    setTimeoutOff(time):void
+             
+            
