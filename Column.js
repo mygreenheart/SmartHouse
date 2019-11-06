@@ -12,7 +12,7 @@ function Column(name) {
 }
 
 Column.prototype = Object.create(Devices.prototype);
-Column.prototype.constructor = Devices;
+Column.prototype.constructor = Column;
 
 Column.prototype.getMode = function () {
     return this._currentMode;
@@ -83,4 +83,3 @@ Column.prototype.playRandomSong = function () {
 
 
 
-var jbl = new D("JBL", "aux", 6);

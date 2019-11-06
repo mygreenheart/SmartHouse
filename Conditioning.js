@@ -8,7 +8,7 @@ function Conditioning(name) {
 }
 
 Conditioning.prototype = Object.create(Devices.prototype);
-Conditioning.prototype.constructor = Devices;
+Conditioning.prototype.constructor = Conditioning;
 
 Conditioning.prototype.getMode = function () {
     return this._currentMode;
@@ -37,4 +37,3 @@ Conditioning.prototype.changeMode = function (mode) {
     }
 
 }
-var samsa = new Conditioning("samsung");

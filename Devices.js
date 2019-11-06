@@ -1,8 +1,7 @@
 "use strict"
 
-function Devices(name, type) {
+function Devices(name) {
     this._name = name;
-    this._typeDevice = type;
     this._isOn = false;
 }
 
@@ -20,4 +19,3 @@ Devices.prototype.setTimeoutOff = function (time) {
         time
     )
 }
-var d = new Devices("jbl", "column");
