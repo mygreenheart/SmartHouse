@@ -9,12 +9,10 @@ SmartHouse.prototype.getDevices = function () {
 }
 
 SmartHouse.prototype.getDeviceByName = function (name) {
-    var device = this._devices.find(function () {
-        if (name === name) {
-            return name;
-        }
+    var device = this._devices.find(function (e) {
+        return e.getName().getName() === name;
     })
-    return device;
+    return device ;
 }
 
 SmartHouse.prototype.addDevice = function (name) {
@@ -23,17 +21,27 @@ SmartHouse.prototype.addDevice = function (name) {
 }
 
 SmartHouse.prototype.deleteDeviceByName = function (name) {
-    var device = this._devices.indexOf(name);
-    if(device > -1){
-        this._devices.splice(device,1);
-    }else throw "Ввели неверное название"
-    }
-   
+   /*  for (var i in this._devices) {
+        if (this._devices[i].getName() == this._devices[name] ){
+            console.log("111");
+            this._devices.splice[i, 1];
+            
+        }
+    } */
+
+    var device = this._devices.filter(function (e) {
+        return e.getName().getName() !== name;
+    })
+    this._devices = device ;
+}
 
 var sh = new SmartHouse("sh1");
 
 sh.addDevice(new Conditioning("lg"));
 sh.addDevice(new Column("jbl"));
 sh.addDevice(new Column("jbl2"));
-
-console.log(sh.getDevices());
+sh.getDeviceByName("lg").onOff();
+console.dir( sh.getDeviceByName("lg") );
+console.dir( sh.getDevices() );
+sh.deleteDeviceByName("jbl");
+console.dir( sh.getDevices() );
