@@ -1,14 +1,14 @@
 "use strict"
 
 function Conditioning(name) {
-    Devices.call(this, name);
+    Devices.call(this,name );
     this._mode = ["cool", "heat", "dry"];
     this._currentMode = this._mode[0];
     this._capacity = 10;
 }
 
 Conditioning.prototype = Object.create(Devices.prototype);
-Conditioning.prototype.constructor = Conditioning;
+
 
 Conditioning.prototype.getMode = function () {
     return this._currentMode;

@@ -2,17 +2,18 @@
 
 
 function Column(name) {
-    Devices.call(this, name);
+
     this._mode = ["aux", "bluetooth", "radio"];
     this._currentMode = this._mode[0];
     this._volume = 50;
     this.playlist = ["The Beatles - Let it be", "Eminem - Rap god", "Iggy Pop - Passenger", "Queen - Bohemian Rhapsody", "Ляпис Трубецкой - Евпатория"]
     this._currentSong = this.playlist[0];
+    Devices.call(this, name);
 
 }
 
 Column.prototype = Object.create(Devices.prototype);
-Column.prototype.constructor = Column;
+
 
 Column.prototype.getMode = function () {
     return this._currentMode;

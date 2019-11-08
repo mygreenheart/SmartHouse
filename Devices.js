@@ -19,5 +19,3 @@ Devices.prototype.setTimeoutOff = function (time) {
         time
     )
 }
-
-var d = new Devices("das");
